@@ -116,3 +116,197 @@ Al final de body, pero dentro de este, llamamos de la siguiente manera al archiv
 # Seleccionar Elementos
 
 ## .getElementById()
+
+Con este método, podemos seleccionar y ver propiedades de los objetos según su id. El Id de cada elemento DEBE SER ÚNICO
+
+![Untitled](img/Untitled%2022.png)
+
+y console.log podemos ver varias cosas de ese objeto
+
+![Untitled](img/Untitled%2023.png)
+
+![Untitled](img/Untitled%2024.png)
+
+También, con el método inner.HTML podemos ver el código que define ese Id
+
+![Untitled](img/Untitled%2025.png)
+
+![Untitled](img/Untitled%2026.png)
+
+Con el método innerText podemos ver el texto de ese ID
+
+![Untitled](img/Untitled%2027.png)
+
+Y también podemos ver el tipo de etiqueta que tiene con tagName
+
+![Untitled](img/Untitled%2028.png)
+
+![Untitled](img/Untitled%2029.png)
+
+## .getElementByClassName()
+
+De la misma manera que con el seleccionador por Id, lo hacemos con las clases y vemos como sale en la consola
+
+![Untitled](img/Untitled%2030.png)
+
+![Untitled](img/Untitled%2031.png)
+
+Esto muestra la clase como un arreglo, entonces podemos acceder a cualquiera de sus elementos de la siguiente manera
+
+![Untitled](img/Untitled%2032.png)
+
+![Untitled](img/Untitled%2033.png)
+
+## .getElementByTagName()
+
+De manera análoga a las anteriores, ahora buscamos por etiqueta. Para este caso los elementos de lista li
+
+![Untitled](img/Untitled%2034.png)
+
+![Untitled](img/Untitled%2035.png)
+
+## .querySelector() y .querySelectorAll()
+
+Nos permite seleccionar un elemento por su selector CSS. El primero selecciona el primero que cumpla ese selector, el segundo selecciona a todos
+
+![Untitled](img/Untitled%2036.png)
+
+![Untitled](img/Untitled%2037.png)
+
+Tambien puede buscar mas de una clase 
+
+![Untitled](img/Untitled%2038.png)
+
+Para el selector .querySelectorAll, nos retorna TODOS LOS ELEMENTOS con las propiedades indicadas. Aca un ejemplo, donde nos muestra un nodo con dos elementos
+
+![Untitled](img/Untitled%2039.png)
+
+![Untitled](img/Untitled%2040.png)
+
+# Asignar Estilo
+
+Primero, debemos acceder al elemento a darle estilo con los selectores vistos anteriormente
+
+![Untitled](img/Untitled%2041.png)
+
+![Untitled](img/Untitled%2042.png)
+
+Habiendo accedido al objeto, podemos acceder a sus propiedades de estilo. Usamos la notación de punto .style y podemos ver la propiedad en consola
+
+![Untitled](img/Untitled%2043.png)
+
+![Untitled](img/Untitled%2044.png)
+
+Entonces, como asignando valor a una constante, definimos una propiedad de estilo a ese elemnto
+
+![Untitled](img/Untitled%2045.png)
+
+![Untitled](img/Untitled%2046.png)
+
+![Untitled](img/Untitled%2047.png)
+
+![Untitled](img/Untitled%2048.png)
+
+# Texto en el DOM
+
+## Acceder al Texto
+
+Accedemos al elemento, en este caso por ID
+
+![Untitled](img/Untitled%2049.png)
+
+![Untitled](img/Untitled%2050.png)
+
+con innerText accedemos al texto, pero tambien podemos hacerlo con textContent. Este último nos muestra el texto con las indentaciones que tienen en el código HTML
+
+![Untitled](img/Untitled%2051.png)
+
+![Untitled](img/Untitled%2052.png)
+
+Y con innerHTML, nos retorna el código de ese elemento como una cadena de caracteres
+
+![Untitled](img/Untitled%2053.png)
+
+![Untitled](img/Untitled%2054.png)
+
+## Modificar el Texto
+
+Vamos a modificar el título, primero accedemos al elemento. Luego podemos modificar el valor de esta variable
+
+![Untitled](img/Untitled%2055.png)
+
+![Untitled](img/Untitled%2056.png)
+
+# Atributos
+
+Vamos a agregar luego de la lista de toppings, un enlace
+
+![Untitled](img/Untitled%2057.png)
+
+Creamos una constante y validamos que salga bien en la consola
+
+![Untitled](img/Untitled%2058.png)
+
+![Untitled](img/Untitled%2059.png)
+
+Como es una colección, es decir un arreglo, podemos acceder a sus elemento y revisar sus atributos, por ejemplo.
+
+![Untitled](img/Untitled%2060.png)
+
+![Untitled](img/Untitled%2061.png)
+
+Y removerlo así
+
+![Untitled](img/Untitled%2062.png)
+
+También podemos darle atributos al elemento
+
+![Untitled](img/Untitled%2063.png)
+
+# Clases
+
+Se puedes tambien agregar, anidar o modificar clases
+
+Se peude acceder mediante la propiedad classList
+
+![Untitled](img/Untitled%2064.png)
+
+![Untitled](img/Untitled%2065.png)
+
+## Agregar una clase
+
+Habiendo definido el elemento, podemos agregar una clase de la siguiente manera
+
+![Untitled](img/Untitled%2066.png)
+
+Si añadimos propiedades a esa clase en el archivo css, el primer elemento de clase topping tendrá color verde en el texto
+
+![Untitled](img/Untitled%2067.png)
+
+![Untitled](img/Untitled%2068.png)
+
+![Untitled](img/Untitled%2069.png)
+
+![Untitled](img/Untitled%2070.png)
+
+## Verificar si una cadena existe
+
+Con el metodo contains, podemos validar si una clase existe en la lista de clases
+
+![Untitled](img/Untitled%2071.png)
+
+Su salida será booleana
+
+![Untitled](img/Untitled%2072.png)
+
+![Untitled](img/Untitled%2073.png)
+
+## Eliminar una clase
+
+Se hace con el método remove
+
+![Untitled](img/Untitled%2074.png)
+
+![Untitled](img/Untitled%2075.png)
+
+# Crear un elemento en DOM
