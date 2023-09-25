@@ -265,7 +265,7 @@ También podemos darle atributos al elemento
 
 # Clases
 
-Se puedes tambien agregar, anidar o modificar clases
+Se puedes también agregar, anidar o modificar clases
 
 Se peude acceder mediante la propiedad classList
 
@@ -310,3 +310,221 @@ Se hace con el método remove
 ![Untitled](img/Untitled%2075.png)
 
 # Crear un elemento en DOM
+
+Desde JS se puede crear un elemento desde cero. Esto es muy útil cuando los usuarios interactúan con la página o la aplicación.  Lo primero que debemos hacer es crear un elemento nuevo de la siguiente manera. Primero debemos crear una variable que nos sirva de referencia para que al crear el nuevo elmento, que debe ser del mismo tipo que la referencia, el sistema sepa cómo debe crearlo.
+
+![Untitled](img/Untitled%2076.png)
+
+## Agregar un Elemento
+
+Para esto vamos a usar el método .append. Que nos permite crear un nuevo nodo en la lista. 
+
+Primero, vamos a definir la clase dle nuevo elemento y el texto que debe contener. Para este caso, será de clase topping y fondo marrón. Adicional a esto su texto será ‘Queso Extra’
+
+![Untitled](img/Untitled%2077.png)
+
+![Untitled](img/Untitled%2078.png)
+
+## Remover un Elemento
+
+Para eliminar un elemento, solamente lo llamamos y con el método remove lo eliminamos, de la siguiente manera
+
+![Untitled](img/Untitled%2079.png)
+
+# Recorrer el DOM
+
+Si queremos obtener el elemento padre de un elemento, primero creamos una variable con elemento, y con el método .parentElement podemos conocer su elemento padre
+
+![Untitled](img/Untitled%2080.png)
+
+![Untitled](img/Untitled%2081.png)
+
+También con el método children podremos conocer lo elementos hijos de un elemento
+
+![Untitled](img/Untitled%2082.png)
+
+![Untitled](img/Untitled%2083.png)
+
+Tambien hay más elementos que nos permitirán concoer los nodos, padres, hijos y hermanos tales como parentElement y parentNode, children, firstChild y firstElementChild, lastChild y lastElementChild, nextSibling y nextElementSibling, previousSiblign y previousElementSibling. Recuerda que se pueden encadenar estos métodos
+
+# Eventos del DOM
+
+Es algo que ocurre en el sitio web como resultado de interacción con el usuario o por otra causa como cambios en el estado del dispositivo o de la ventana. Por ejemplo Click o presionar una tecla del techado, cambios del tamaño de la ventana. Otros son por ejemplo arrastrar una imagen. Con dispositivos touch pueden ser tocar arrastrar y muchisisimos más. Los más comunes son los del cursor y los del teclado
+
+# Conceptos Importantes
+
+- target (blanco): Es el elemento con el que el ususrio puede interactuar, puede ser un botón o una imagen. Este le indica al navegador que algo ocurrió
+- Trigger: Es desencadenar, es la acción que desencadena la interacción con el target
+- Event handler: Es una función que se ejecuta cuando ocurre un evento
+
+![Untitled](img/Untitled%2084.png)
+
+- Event Listener:  Es la conexión para asociar un evento en un elemento con una función específica
+
+![Untitled](img/Untitled%2085.png)
+
+# Eventos en HTML
+
+Para crear eventos, hay atributos que nos representan distintos eventos
+
+![Untitled](img/Untitled%2086.png)
+
+Para este caso, onclick es el atributo que nos dice que en el dado caso que se haga click en este elemento se ejecute la función mostratrClic. Entonces en JS debemos definir la función mostrarClic
+
+![Untitled](img/Untitled%2087.png)
+
+![Untitled](img/Untitled%2088.png)
+
+Podemos personalizar la salida en la consola con esta dunción definida en el atributo. Vamos a definir que la función mostrarClic muestre el nombre del topping de la siguiente manera
+
+![Untitled](img/Untitled%2089.png)
+
+![Untitled](img/Untitled%2090.png)
+
+![Untitled](img/Untitled%2091.png)
+
+# .addEventListener
+
+Esto es mucho más práctico que lo que hace el atributo onClick. Ya que solo lo hacemos desde el archivo javaScript. Primero creamos una constante con el elemento con el que vamos a trabajar y definimos la función que debe realizarse. Luego debemos crear una conexión entre estos dos. Esto lo hacemos llamando al elemento seguido por el método addElementListener. Este método llama dos parámetro, el detonante (que para este caso es un click) y la función que debe realizar
+
+![Untitled](img/Untitled%2092.png)
+
+Estos eventos se representan como un objeto en la consol
+
+![Untitled](img/Untitled%2093.png)
+
+dentro de la función, por medio de notación de punto, poder que se imprima cualquier propiedad de este objeto
+
+![Untitled](img/Untitled%2094.png)
+
+Definamos una función que nos haga esto con todos los toppings
+
+Definidmos el conjunto toppings, llamandolo del html por su clase. Luego, definimos la función mostrar clic definido en el parámetro topping. Esta funcion nos va a mostrar el texto del elemento, es decir el nomsbre del topping. Y finalmente hacermos una función for of. Esta itera en todos los elementos de un grupo. En este caso itera en todos los topping del grupo toppings (definido al inicio)
+
+En este ciclo for, agregaremos un listener que lo detona un click y ejecuta la función mostrarClic cuando ocurra
+
+![Untitled](img/Untitled%2095.png)
+
+![Untitled](img/Untitled%2096.png)
+
+La función también puede definirse como una función flecha dentro del ciclo
+
+![Untitled](img/Untitled%2097.png)
+
+# Proyecto: Colores Aleatorios
+
+Este proyecto será una página que muestre un color en hexadecimal y al hacer click en un botón, este cambiará el color de manera aleatoria. EL fondo de la página deberá ser del mismo color que se muestra en texto
+
+![Untitled](img/Untitled%2098.png)
+
+## HTML
+
+Vamos a definir el cuerpo del archivo html. Usamos la abreviatura Emmet para que nos de una referencia y vamos agregando lo que necesitemos. Cambiamos el idioma y creamos en la carpeta del proyecto los archivos de estilo y js
+
+![Untitled](img/Untitled%2099.png)
+
+- Head: Acá, partiendo de lo que nos da la abreviatura Emmet, agregamos el título de la página, relacionamos el archivo css y ponemos un favicon
+
+![Untitled](img/Untitled%20100.png)
+
+- Body: Le damos una clase “centrar-flex” al body. Luego creamos un div, un párrafo y un botón. Para el div, le damos clase “centrar-flex” y le ponemos como id contenedor. Para párrafo, le ponemos de id color y como texto un color aleatorio en hexadecimal. Y para el botón, le ponemos como id “boton-color” y como texto Cambiar Color. Finalmente, fuera del div, relacionamos el archivo js
+
+![Untitled](img/Untitled%20101.png)
+
+## CSS
+
+- Estilos Generales: Se define como estilo general, luego las características del body y la clase .centrar-flex
+
+![Untitled](img/Untitled%20102.png)
+
+- Contenedor: Flex wrap establece que si es necesario usar mas de una línea, puede que las palabras se vean en dos renglones. Flex direction establece que una sea debajo de otra.
+
+![Untitled](img/Untitled%20103.png)
+
+- Texto
+
+![Untitled](img/Untitled%20104.png)
+
+- Boton: User-select none es para que el ususrio no pueda seleccionar el texto del botón .Cursor es para que cuando el usuario esté con el cursor sobre el botón, este sea una manita. Transition-duration es el tiempo que tarda la transición de boton no seleccionado a seleccionado. El hover, son las propiedades del botón seleccionado.
+
+![Untitled](img/Untitled%20105.png)
+
+## JavaScript
+
+Primero vamos a llamar al DOM los elementos con los que vamos a trabajar. Puntualmente son el recto del color y el botón
+
+![Untitled](img/Untitled%20106.png)
+
+Ahora vamos a definir una función que escriba aleatoriamente el nombre de un color hexadecimal
+
+![Untitled](img/Untitled%20107.png)
+
+Y una función que actualice el texto del color y su color sea el mismo del texto
+
+![Untitled](img/Untitled%20108.png)
+
+Y ahora los ligamos por medio del listener, que sea detonado por el clic del usuario en el botón y que accione la función de actualizar texto y color
+
+![Untitled](img/Untitled%20109.png)
+
+Resultado
+
+![Untitled](img/Untitled%2098.png)
+
+![Untitled](img/Untitled%20110.png)
+
+# Proyecto Colores RGB
+
+Este proyecto será una pagina que contiene 3 sliders, uno para cada color RGB. A medida que se mueva el slider, cambiará el valor de cada color y debe mostrarse el valor que cambió y actualizar el color de fondo de la página
+
+![Untitled](img/Untitled%20111.png)
+
+## HTML
+
+Creamos la estructura de la página. Vamos a definir el cuerpo del archivo html. Usamos la abreviatura Emmet para que nos de una referencia y vamos agregando lo que necesitemos. Cambiamos el idioma y creamos en la carpeta del proyecto los archivos de estilo y js
+
+![Untitled](img/Untitled%20112.png)
+
+- Head: Usamos la abreviatura Emmet para la estructura inicial. También referenciamos el archivo de estilo style y definimos el favicon y lo relacionamos
+
+![Untitled](img/Untitled%20113.png)
+
+- Body: Creamos un div de clase contenedor-principal, dentro de este otro div de clase contenedor interno. Dentro de este, irán 3 divs correspondientes a los selectores de color. Cada uno de ellos será de clase color, tendrán una etiqueta con su nombre y un input de tipo range (slider) con sus valores de referencia como se muestra en la imagen (Dentro de esos valores de referencia vamos a poner un valor inicial que correspondrá al valor inicial del color cuando la página se inicie). Finalmente un p que mostrará el valor numérico del color. Finalmente linkeamos el archivo .js ya creado
+
+![Untitled](img/Untitled%20114.png)
+
+## CSS
+
+- Estilos Generales. Acá definimos el mismo valor inicial definido en el html en el color de fondo
+
+![Untitled](img/Untitled%20115.png)
+
+- Contenedores
+
+![Untitled](img/Untitled%20116.png)
+
+- Colores RGB:
+
+![Untitled](img/Untitled%20117.png)
+
+- Etiquetas
+
+![Untitled](img/Untitled%20118.png)
+
+## JavaScript
+
+Primero vamos a llamar desde el html las variables que vamos a necesitar en el programa.
+
+![Untitled](img/Untitled%20119.png)
+
+Luego actualizamos el texto de los párrafos p con el valor del slider
+
+![Untitled](img/Untitled%20120.png)
+
+Creamos una función que actualice el color según los valores del slider
+
+![Untitled](img/Untitled%20121.png)
+
+Finalmente, enlazamos la interacción del usuario al mover el slider con los valores del texto y con el color de fondo. El listener se activará con el detonante change y la función interna será definida mediante la obtención del valor del slider (target) y colocando ese valor como texto en los párrafos y como valor numérico del color en RGB.
+
+![Untitled](img/Untitled%20122.png)
